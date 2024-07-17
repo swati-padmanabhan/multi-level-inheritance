@@ -23,35 +23,4 @@ namespace MultilevelInheritence.models
             return $"Employee ID: {Id} \nEmployee Name: {Name}";
         }
     }
-
-    //Intermediate Class which inherits properties from Employee Class
-    public class Department : Employee
-    {
-        public string DepartmentName { get; set; }
-        public Department(int id, string name, string departmentName) : base(id, name)
-        {
-            DepartmentName = departmentName;
-        }
-        public string GetDepartmentData()
-        {
-            return $"Department Name: {DepartmentName}";
-        }
-    }
-
-    //Derived Class which inherits properties from Department Class
-    public class Project : Department
-    {
-        public string ProjectName { get; set; }
-
-        public Project(int id, string name, string departmentName, string projectName)
-            : base(id, name, departmentName)
-        {
-            ProjectName = projectName;
-        }
-        public string  GetProjectData()
-        {
-            return $"Project Name: {ProjectName}";
-        }
-    
-    }
 }
